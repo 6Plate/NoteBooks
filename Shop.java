@@ -1,14 +1,41 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
 
 import HW6.NB;
 
 public class Shop {
     private List<NB> laptop;
+    
 
-    
-    
-    public List<NB> Filter(int choose){
+    public Shop() {
+    laptop = new ArrayList<>();
+}
+
+    public void addNB( NB nb){
+    if (!laptop.contains(nb)){
+        laptop.add(nb);
+    }
+    }
+
+
+public void MenuFilter (){
+    Map<Integer, String> filter = new HashMap<>();
+    filter.put(1, "Color");
+    filter.put(2, "Hd");
+    filter.put(3, "Оs");
+    filter.put(4, "озy");
+    System.out.println(filter);
+    System.out.println("Введите номер желаемого критерия:");
+    Scanner sc = new Scanner(System.in);
+    int choosed = sc.nextInt();
+    System.out.println(Filter(choosed));
+
+}
+
+public List<NB> Filter(int choose){
 switch (choose) {
     case choose == 1:
         System.out.println("Выберите цвет: ");
@@ -58,6 +85,4 @@ switch (choose) {
     }
 }
 }
-
-
 }

@@ -5,6 +5,12 @@ int hd;
 String os;
 String color;
 
+public NB( int ram, int hd, String os, String color){
+    this.ram = ram;
+    this.hd = hd;
+    this.os = os;
+    this.color = color;
+}
 @Override
 public String toString() {
     return String.format("Название: %s \n объем оперативной памяти: %d Гб \n объем накопителя %d Гб \n ОС %s \n Цвет %s \n Диагональ %.1f \n",
